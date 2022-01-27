@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(66,20,96,1) 100%, rgba(0,212,255,1) 100%);
+  /* background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,10,103,1) 100%, rgba(66,20,96,1) 100%); */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Banner {
+  width: 100%;
+  height: 60%;
+  background-image: url("https://images.unsplash.com/photo-1583224874284-c7aeb59863d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhcnJ5JTIwbmlnaHR8ZW58MHx8MHx8&w=1000&q=80");
+  background-color: rgb(37, 11, 44);
+  display: flex;
+  justify-content: flex-start;
+  align-items:center; 
+  padding-bottom: 60px;
+  position: static;
+}
+
+.Banner-Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center, flex-end;
+  height: 10%;
+  margin-bottom: -40px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+
+/* AllRecs Styling */
+.Recent-Recs {
+  margin: auto;
+  padding: 5px; 
+  border: 1px solid black; 
+  background-color: rgb(37, 11, 44);
+  background-image: url("https://images.unsplash.com/photo-1583224874284-c7aeb59863d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhcnJ5JTIwbmlnaHR8ZW58MHx8MHx8&w=1000&q=80");
+  background-blend-mode:hard-light;
+}
+
+/* Details Styling */
+.Details{
+  display: flex;
+  justify-content: center;
+}
+
+.Rec-Details {
+  margin: 50px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 70%;
+}
+
+.Rec-Score-Content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.MyRec-Score {
+  margin: 50px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 100%;
+  background-image: url("https://images.unsplash.com/photo-1583224874284-c7aeb59863d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhcnJ5JTIwbmlnaHR8ZW58MHx8MHx8&w=1000&q=80");
+}
+
+.Rec-Content {
+  text-align: left;
+}
+
+.Full-Review {
+  margin: 50px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/* Main Styling */
+.Main_Div {
+  display: flex;
+}
+
+/* Shared Styling */
+.Button {
+  background-color: lightcoral;
+  color: white;
+}
+
+.Div {
+  margin: 50px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.Dropdown {
+  margin: 5px;
+  width: 100px;
+}
+
+.text-area {
+  width: 500px;
+  height: 100px;
+}
+
+.label {
+  padding: 10px;
+}
