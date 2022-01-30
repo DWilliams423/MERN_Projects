@@ -26,7 +26,7 @@ const LoginForm = () => {
                 console.log(res.data.err)
                 setErrors(res.data.errors)
             } else if(res.data.msg === "Success!"){
-                navigate("/");
+                navigate("recs/dashboard");
             }
         })
             .catch(err => {
@@ -37,7 +37,7 @@ const LoginForm = () => {
     return (
         <div style={{margin: "50px", padding:"10px", border:"1px solid black"}}>
             <form onSubmit={onSubmitHandler}>
-                <header><b><u>Login</u></b></header>
+                <header><b>Login</b></header>
                 <p>
                     <label style={{margin: "5px"}}><b>Email:</b></label>
                     <input name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -54,9 +54,9 @@ const LoginForm = () => {
                         : null
                     }
                 </p>
-                <input type="submit" style={{backgroundColor: "red", color: "white"}} />
+                <input type="submit" className='Button' />
             </form>
-            <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/recs/user/register")}}>Register</button>
+            <button className='Button' onClick={() => {navigate("recs/user/register")}}>Register</button>
         </div>
     )
 }

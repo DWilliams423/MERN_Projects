@@ -20,7 +20,7 @@ const ProfileNav = () => {
         axios.get('http://localhost:8000/api/recs/user/logout', {withCredentials: true})
             .then(res => {
                 console.log(res)
-                navigate('/recs/login')
+                navigate('/')
             })
             .catch(err => {
                 console.log(err)

@@ -22,17 +22,20 @@ const AllRecs = (props) => {
     }, [])
 
     return (
+        <>
+        <header>
+                <div className='shadowBox'>
+                    <h2 className='rainbow rainbow_text_animated'>Recent Recs</h2>
+                </div>
+        </header>
         <div>
-            <header>
-                <h2>Your Recent Recs</h2>
-            </header>
             <table className="Recent-Recs">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Tag Line</th>
-                        <th>MyRec Score</th>
-                        <th>Actions</th>
+                        <th></th>
+                        <th></th>
+                        <th className='rainbow rainbow_text_animated'>MyRec Score</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody style={{border: "1px solid black", backgroundColor: "white", color: "black"}}>
@@ -43,10 +46,9 @@ const AllRecs = (props) => {
                                 <td><b>{dining.diningName}</b></td>
                                 <td><b>{dining.diningBriefDescrip}</b></td>
                                 <td><b>{dining.recsScore}</b></td>
-                                <td>
-                                    <button className='Button' onClick ={() => {navigate(`recs/editdining/${dining._id}`)}}>Edit</button>
-                                    |
-                                    <button className='Button' onClick ={() => {navigate(`recs/detailsdining/${dining._id}`)}}>Details</button>
+                                <td className='Actions'>
+                                    <button className='Button' onClick ={() => {navigate(`/recs/editdining/${dining._id}`)}}>Edit</button>
+                                    <button className='Button' onClick ={() => {navigate(`/recs/detailsdining/${dining._id}`)}}>Details</button>
                                 </td>
                             </tr>
                         ))
@@ -59,10 +61,10 @@ const AllRecs = (props) => {
                                 <td><b>{game.gameTitle}</b></td>
                                 <td><b>{game.gameBriefDescrip}</b></td>
                                 <td><b>{game.recsScore}</b></td>
-                                <td>
-                                    <button style={{backgroundColor: "lightcoral", color:"white"}} onClick ={() => {navigate(`recs/editgame/${game._id}`)}}>Edit</button>
-                                    |
-                                    <button style={{backgroundColor: "lightcoral", color:"white"}} onClick ={() => {navigate(`recs/detailsgame/${game._id}`)}}>Details</button>
+                                <td className='Actions'>
+                                    <button className='Button' onClick ={() => {navigate(`/recs/editgame/${game._id}`)}}>Edit</button>
+                                    
+                                    <button className='Button' onClick ={() => {navigate(`/recs/detailsgame/${game._id}`)}}>Details</button>
                                 </td>
                             </tr>
                         ))
@@ -71,6 +73,8 @@ const AllRecs = (props) => {
                 </tbody>
             </table>
         </div>
+        </>
+        
     )
 }
 

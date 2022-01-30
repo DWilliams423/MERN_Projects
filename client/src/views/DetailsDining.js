@@ -31,31 +31,34 @@ const DetailsDining = (props) => {
         axios.delete(`http://localhost:8000/api/recs/dining/${id}`)
             .then((res) => {
                 setDining(dining.filter((dining) => dining._id !== diningId));
-                navigate("/");
+                navigate("/recs/dashboard");
             })
             .catch ((err) => console.log(err));
     }
     return (
-        <div className="Rec-Details">
+        <div className='Details'>
+            <div className="Rec-Details-Dining">
             <div className='Rec-Score-Content'>
                 <div className="MyRec-Score">
-                    <p><u>MyRecs Score</u>: <br /><b>{recsScore}</b></p>
+                    <p><b>MyRecs Score</b>: <br /><b>{recsScore}</b></p>
                 </div>
                 <div className='Rec-Content'>
                     <p><u>Restaurant Name</u>: <b>{diningName}</b></p>
                     <p><u>Cuisine</u>: <b>{diningType}</b></p>
                     <p><u>Price Point</u>: <b>{diningPrice}</b></p>
-                    <p><u>Website</u>: <b>{diningSite}</b></p>
+                    <p><u>Website</u>: <b><a href={diningSite} className='Website'>{diningSite}</a></b></p>
                     <p><u>Tag Line</u>: <b>{diningBriefDescrip}</b></p>
                 </div>
             </div>
             
             <div className="Full-Review">
-                <p><u>Full Review</u>: <b>{diningFullReview}</b></p>
+                <b>{diningFullReview}</b>
             </div>
-            <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/")}}>Return Home</button>
-            <button style={{backgroundColor: "red", color:"white"}} onClick={(e) => { deleteDining(dining._id) }}><b><u>Delete</u> {`${diningName}`} Rec</b> </button>
+            <button className='Button' onClick={() => {navigate("/recs/dashboard")}}>Return Home</button>
+            <button className='Button' onClick={(e) => { deleteDining(dining._id) }}><b><u>Delete</u> {`${diningName}`} Rec</b> </button>
         </div>
+        </div>
+        
     )
 }
 

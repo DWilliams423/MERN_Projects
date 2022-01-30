@@ -25,7 +25,7 @@ const GameForm = () => {
         })
             .then((res) => {
                 console.log(res)
-                // navigate("/");
+                navigate("recs/dashboard");
             })
             .catch(err => {
                 setErrors(err.response.data.errors);
@@ -100,7 +100,7 @@ const GameForm = () => {
                     <label style={{margin: "5px"}}><b>Full Review:</b></label>
                     <br/>
                     {/* <input type="text" onChange={(e) => setDiningFullReview(e.target.value)} /> */}
-                    <textarea onChange={(e) => setGameFullReview(e.target.value)} />
+                    <textarea className='text-area' onChange={(e) => setGameFullReview(e.target.value)} />
                     {errors.gameFullReview ?
                         <p style={{color: "red"}}><em>{errors.gameFullReview.message}</em></p>
                         : null
@@ -122,7 +122,7 @@ const GameForm = () => {
                 </p>
                 <input type="submit" style={{backgroundColor: "red", color: "white"}} />
             </form>
-            <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/")}}>Return Home</button>
+            <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/recs/dashboard")}}>Return Home</button>
         </div>
 
     )

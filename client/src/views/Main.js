@@ -31,8 +31,8 @@ const Main = () => {
                 <div>
                     <CreateRec />
                 </div>
-                <p>-----------------------------------</p>
-                <div className="Div">
+                <p>_____________________________________</p>
+                <div >
                     <AllRecs />
                 </div>
             </div>

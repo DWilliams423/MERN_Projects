@@ -40,7 +40,7 @@ const EditGame = (props) => {
         axios.put(`http://localhost:8000/api/recs/games/${id}`, putEditData)
             .then((res) => {
                 console.log(res.data)
-                navigate("/");
+                navigate("/recs/dashboard");
             })
             .catch(err => {
                 setErrors(err.response.data.errors);
@@ -62,7 +62,7 @@ const EditGame = (props) => {
                     }
                 </p>
                 <p>
-                    <label><b>Genre:</b></label>
+                    <label className='label'><b>Genre:</b></label>
                     <select 
                     name="gameGenre"
                     value={gameGenre}
@@ -80,7 +80,7 @@ const EditGame = (props) => {
                     }
                 </p>
                 <p>
-                    <label><b>Platform:</b></label>
+                    <label className='label'><b>Platform:</b></label>
                     <select 
                     name="gamePlatform"
                     value={gamePlatform}
@@ -102,28 +102,28 @@ const EditGame = (props) => {
                     }
                 </p>
                 <p>
-                    <label><b>Game Image:</b></label>
+                    <label className='label'><b>Game Image:</b></label>
                     <input type="text"
-                    // name="gameImg"
-                    // value={gameImg}
+                    name="gameImg"
+                    value={gameImg}
                     onChange={(e) => {setGameImg(e.target.value)}} />
                 </p>
                 <p>
-                    <label><b>Rec Tag Line:</b></label>
+                    <label className='label'><b>Rec Tag Line:</b></label>
                     <input type="text"
                     name="gameBriefDescrip"
                     value={gameBriefDescrip}
                     onChange={(e) => {setGameBriefDescrip(e.target.value)}} />
                 </p>
                 <p>
-                    <label><b>Full Review:</b></label><br />
+                    <label className='label'><b>Full Review:</b></label><br />
                     <textarea className='text-area'
                     name="gameFullReview"
                     value={gameFullReview}
                     onChange={(e) => {setGameFullReview(e.target.value)}} />
                 </p>
                 <p>
-                    <label><b>MyRec Score:</b></label>
+                    <label className='label'><b>MyRec Score:</b></label>
                     <select 
                     name="recsScore"
                     value={recsScore}
@@ -139,7 +139,7 @@ const EditGame = (props) => {
                     }
                 </p>
                 <button style={{backgroundColor: "blue", color: "white", margin: "5px"}}>Submit Changes</button>
-                <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/")}}>Return Home</button>
+                <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/recs/dashboard")}}>Return Home</button>
             </form>
         </div>
     )

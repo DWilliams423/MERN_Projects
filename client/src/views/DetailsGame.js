@@ -31,18 +31,18 @@ const DetailsGame = (props) => {
         axios.delete(`http://localhost:8000/api/recs/games/${id}`)
             .then((res) => {
                 setGame(game.filter((game) => game._id !== gameId));
-                navigate("/");
+                navigate("/recs/dashboard");
             })
             .catch ((err) => console.log(err));
     }
     return (
         <>
             <div className='Details'>
-                <div className="Rec-Details">
+                <div className="Rec-Details-Dining">
                     <div className='Rec-Score-Content'>
-                        <div className="MyRec-Score">
-                            <p><u>MyRecs Score</u>: <br /><b>{recsScore}</b></p>
-                        </div>
+                    <div className="MyRec-Score">
+                    <p><b>MyRecs Score</b>: <br /><b>{recsScore}</b></p>
+                    </div>
                         <div className='Rec-Content'>
                             <p><u>Game Title</u>: <b>{gameTitle}</b></p>
                             <p><u>Genre</u>: <b>{gameGenre}</b></p>
@@ -50,15 +50,15 @@ const DetailsGame = (props) => {
                             <p><u>Tag Line</u>: <b>{gameBriefDescrip}</b></p>
                         </div>
                         <div>
-                            <img src={gameImg}/>
+                            <img className='Game-Img' src={gameImg}/>
                         </div>
                     </div>
                     
                     <div className="Full-Review">
                         <p><b>{gameFullReview}</b></p>
                     </div>
-                    <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/")}}>Return Home</button>
-                    <button style={{backgroundColor: "red", color:"white"}} onClick={(e) => { deleteGame(game._id) }}><b><u>Delete</u> {`${gameTitle}`} Rec</b> </button>
+                    <button className='Button' onClick={() => {navigate("/recs/dashboard")}}>Return Home</button>
+                    <button className='Button' onClick={(e) => { deleteGame(game._id) }}><b><u>Delete</u> {`${gameTitle}`} Rec</b> </button>
                 </div>
             </div>
         </>

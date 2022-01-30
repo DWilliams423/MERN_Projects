@@ -18,8 +18,8 @@ function App() {
       <Banner />
       <header className="App-header">
       <Router>
-        <Main path="/" />
-        <LoginForm path="recs/login" />
+        <Main path="recs/dashboard" />
+        <LoginForm path="/" />
         <RegisterForm path="recs/user/register" />
         <CreateRec path="recs/createrec" />
         <DiningForm path="recs/createdining" />

@@ -22,7 +22,7 @@ const RegisterForm = () => {
                 if(res.data.errors) {
                     setErrors(res.data.errors)
                 } else {
-                    navigate("/recs/login");
+                    navigate("/");
                 }
             })
             .catch(err => {
@@ -67,7 +67,7 @@ const RegisterForm = () => {
                 </p>
                 <input type="submit" style={{backgroundColor: "red", color: "white"}} />
             </form>
-            <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/recs/login")}}>Return to Login</button>
+            <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/")}}>Return to Login</button>
         </div>
     )
 }

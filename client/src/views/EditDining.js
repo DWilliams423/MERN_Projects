@@ -40,7 +40,7 @@ const EditDining = (props) => {
         axios.put(`http://localhost:8000/api/recs/dining/${id}`, putEditData)
             .then((res) => {
                 console.log(res.data)
-                navigate("/");
+                navigate("/recs/dashboard");
             })
             .catch(err => {
                 setErrors(err.response.data.errors);
@@ -143,7 +143,7 @@ const EditDining = (props) => {
                     }
                 </p>
                 <button style={{backgroundColor: "blue", color: "white", margin: "5px"}}>Submit Changes</button>
-                <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/")}}>Return Home</button>
+                <button style={{backgroundColor: "blue", color: "white"}} onClick={() => {navigate("/recs/dashboard")}}>Return Home</button>
             </form>
         </div>
     )

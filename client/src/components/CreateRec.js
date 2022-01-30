@@ -13,15 +13,15 @@ const CreateRec = () => {
         // const value = CreateForm
         if (createForm == '🍔Dining') {
             console.log("===")
-            navigate("recs/createdining");
+            navigate("/recs/createdining");
 
         } else if (createForm == '🎮Game'){
-            navigate("recs/creategame")
+            navigate("/recs/creategame")
         }     
     }
     return (
         <div>
-            <header>Create a new Rec!</header>
+            <header><b>Create a new Rec!</b></header>
             <form onSubmit={onSubmitHandler}>
                 <label style={{padding: "5px"}}>Choose a Rec Type</label>
                 <select className="Dropdown" onChange={(e) => setCreateForm(e.target.value)}>
