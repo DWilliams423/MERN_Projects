@@ -25,7 +25,7 @@ const GameForm = () => {
         })
             .then((res) => {
                 console.log(res)
-                navigate("recs/dashboard");
+                navigate("/recs/dashboard");
             })
             .catch(err => {
                 setErrors(err.response.data.errors);

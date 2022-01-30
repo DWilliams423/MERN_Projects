@@ -33,9 +33,9 @@ const ProfileNav = () => {
                 {/* <img src="null" alt="Profile Picture">Profile Pic</img> */}
                 <p>Profile Picture</p>
             </div>
-            <div>
+            <div className='shadowBox'>
                 <header>
-                    <h5>MyRec Lists</h5>
+                    <h5 className='rainbow rainbow_text_animated'>MyRec Lists</h5>
                 </header>
                 <table className="Recent-Recs">
                     <tbody>

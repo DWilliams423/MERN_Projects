@@ -26,7 +26,7 @@ const LoginForm = () => {
                 console.log(res.data.err)
                 setErrors(res.data.errors)
             } else if(res.data.msg === "Success!"){
-                navigate("recs/dashboard");
+                navigate("/recs/dashboard");
             }
         })
             .catch(err => {
