@@ -22,6 +22,7 @@ module.exports = function(app){
     // Register Routes
     app.post('/api/recs/login', UserController.login);
     app.post('/api/recs/user/register', UserController.register);
+    app.post('/api/recs/user', UserController.getAllUsers);
     app.get('/api/recs/user', UserController.getAllUsers);
     app.get('/api/recs/user/loggedin', authenticate, UserController.getLoggedInUser);
     app.get('/api/recs/user/logout', UserController.logout)

@@ -16,6 +16,23 @@ const ProfileNav = () => {
     //         navigate("recs/creategame")
     //     }     
     // }
+    const [file, setFile] = useState(null);
+
+    const fileSelectedHandler = (e) => {
+        console.log(e.target.files[0]);
+
+    }
+    const fileUploadHandler = () => {
+        const fd = new FormData();
+        fd.append('image', file, setFile.name)
+        axios.post('http://localhost:8000/api/recs/user', fd)
+            .then((res) => {
+                console.log(res)
+                // navigate("/");
+            })
+            // .catch(console.log(err))
+    }
+
     const logout = (e) => {
         axios.get('http://localhost:8000/api/recs/user/logout', {withCredentials: true})
             .then(res => {
@@ -33,6 +50,8 @@ const ProfileNav = () => {
                 {/* <img src="null" alt="Profile Picture">Profile Pic</img> */}
                 <p>Profile Picture</p>
             </div>
+            <input type="file" onChange={fileSelectedHandler}/>
+            <button onClick={fileUploadHandler}>Upload</button>
             <div className='shadowBox'>
                 <header>
                     <h5 className='rainbow rainbow_text_animated'>MyRec Lists</h5>
